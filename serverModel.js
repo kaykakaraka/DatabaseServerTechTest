@@ -1,15 +1,12 @@
 class ServerModel {
 
   add(keyValuePair) {
-
+    this.data = keyValuePair;
   }
 
   retrieve(key) {
-    if (key === 'animal') {
-      return 'cat'
-    } else if (key === 'pet') {
-      return 'dog'
-    }
+    console.log(this.data);
+    return this.data[key]
   }
 }
 

@@ -12,4 +12,10 @@ describe('ServerModel',() => {
     model.add({'pet':'dog'})
     expect(model.retrieve('pet')).toEqual('dog');
   })
+
+  it('returns a different value for animal',() => {
+    model = new ServerModel
+    model.add({'animal':'dog'})
+    expect(model.retrieve('animal')).toEqual('dog');
+  })
 })
