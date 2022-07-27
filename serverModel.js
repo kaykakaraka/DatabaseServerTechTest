@@ -5,7 +5,11 @@ class ServerModel {
   }
 
   retrieve(key) {
-    return 'cat'
+    if (key === 'animal') {
+      return 'cat'
+    } else if (key === 'pet') {
+      return 'dog'
+    }
   }
 }
 
