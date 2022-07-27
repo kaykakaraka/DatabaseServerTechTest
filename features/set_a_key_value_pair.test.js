@@ -1,5 +1,5 @@
 describe('server',() => {
-  xit('extracts a key value pair from search query values and returns them',() => {
+  it('extracts a key value pair from search query values and returns them',() => {
     fetch('http://localhost:4000/set?animal=cat')
       .then(
         fetch('http://localhost:4000/get?key=animal')
@@ -10,7 +10,7 @@ describe('server',() => {
         }));
   })
 
-  xit('extracts a different key value pair and returns its value',() => {
+  it('extracts a different key value pair and returns its value',() => {
     fetch('http://localhost:4000/set?pet=dog')
     .then(
       fetch('http://localhost:4000/get?key=pet')
