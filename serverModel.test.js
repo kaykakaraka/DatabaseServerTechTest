@@ -26,4 +26,11 @@ describe('ServerModel',() => {
     expect(model.retrieve('animal')).toEqual('cat');
     expect(model.retrieve('pet')).toEqual('dog');
   })
+
+  it('overwrites a previous key-value pair',() => {
+    model = new ServerModel
+    model.add({'animal':'cat'})
+    model.add({'animal':'fish'})
+    expect(model.retrieve('animal')).toEqual('fish')
+  })
 })
