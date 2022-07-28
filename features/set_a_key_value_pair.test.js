@@ -72,10 +72,21 @@ describe('server',() => {
     ))
   })
 
-  it('maintains capital letters when included',() => {
+  it('maintains capital letters in the value when included',() => {
     fetch('http://localhost:3000/set?myanimal=CAT')
       .then(
         fetch('http://localhost:3000/get?key=myanimal')
+        .then(response => response.json())
+        .then(data => expect(data).toEqual('CAT'))
+        .catch((error) => { 
+          console.error(error);
+        }));
+  })
+
+  it('maintains capital letters in the key when included',() => {
+    fetch('http://localhost:3000/set?myAnimal=CAT')
+      .then(
+        fetch('http://localhost:3000/get?key=myAnimal')
         .then(response => response.json())
         .then(data => expect(data).toEqual('CAT'))
         .catch((error) => { 
