@@ -6,8 +6,9 @@ It has the following features:
 
 * When it receives a GET request on http://localhost:4000/set?somekey=somevalue should store the key value pair in memory
 * When it receieves a GET request on http://localhost:4000/get?key=somekey it should return the value stored at somekey
+* You can store multiple key value pairs on the sever and access each of them
+* A new entry with the same key as a previous entry will overwrite that key
 * This data is stored in memory.
-
 
 To Run On Your Computer
 ---------------------
@@ -20,6 +21,7 @@ Note: the tests run on port 3000. This has the benefit of meaning you cannot bre
 
 My Process
 ------------
+
 
 Examples of Use 
 -----------------
