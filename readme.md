@@ -29,9 +29,11 @@ I then wrote some examples of how I would expect to interact with the server fro
 
 I then followed a TDD process. I started with the feature tests and then, when these failed, moved to unit tests for the model in order to implement the functionality in the model and expand that into the server as a whole. This enabled me to focus on small chunks of work at a time.
 
+I tested some edge cases towards the end: I checked that the server worked with capital letters, distinguished between capital letters and lowercase letters, and accepted special characters. I also test-drove for the model to throw an error if it did not receive an object. I believe this will be a useful error message when expanding functionality. 
+
 Diagram
 ---------
-![](images/design.png?raw=true)
+![](images/diagram.png?raw=true)
 
 Examples of Use 
 -----------------
@@ -56,5 +58,5 @@ Dependencies
 ------
 - [Express](https://expressjs.com/) web framework for Node.js.
 - [Nodemon](https://nodemon.io/) to reload the server automatically. This currently has limited use but could be useful when adding the database via the model.
-- [ESLint](https://eslint.org) for linting. This required some configuration but now works well.
+- [ESLint](https://eslint.org) for linting. 
 - [Jest](https://jestjs.io/) for testing.
