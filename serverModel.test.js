@@ -34,4 +34,8 @@ describe('ServerModel',() => {
     expect(model.retrieve('animal')).toEqual('fish')
   })
 
+  it('throws an error if it is given a string',() => {
+    const model = new ServerModel
+    expect(() => {model.add('animal')}).toThrow('Error: Can only add key-value pairs')
+  })
 })

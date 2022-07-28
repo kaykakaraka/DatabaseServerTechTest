@@ -4,6 +4,9 @@ class ServerModel {
   }
 
   add(keyValuePair) {
+    if (typeof keyValuePair !== 'object') {
+      throw 'Error: Can only add key-value pairs'
+    }
     Object.assign(this.data, (keyValuePair));
   }
 
