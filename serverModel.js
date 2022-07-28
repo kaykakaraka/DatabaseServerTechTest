@@ -8,7 +8,6 @@ class ServerModel {
   }
 
   retrieve(key) {
-    console.log(this.data);
     return this.data[key]
   }
 }
