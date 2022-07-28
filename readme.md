@@ -24,6 +24,8 @@ My Process
 I began by diagraming the overall system as shown below.
 
 
+I then wrote some examples of how I would expect to interact with the server from code, using fetch requests. This gave me a better sense of what I would be testing for.
+
 I then followed a TDD process. I started with the feature tests and then, when these failed, moved to unit tests for the model in order to implement the functionality in the model and expand that into the server as a whole. This enabled me to focus on small chunks of work at a time.
 
 Examples of Use 
