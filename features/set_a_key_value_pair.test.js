@@ -124,4 +124,15 @@ describe('server',() => {
         }));
   })
 
+  it('accepts special characters in the key',() => {
+    fetch('http://localhost:3000/set????=question')
+      .then(
+        fetch('http://localhost:3000/get?key=???')
+        .then(response => response.json())
+        .then(data => expect(data).toEqual('question'))
+        .catch((error) => { 
+          console.error(error);
+        }));
+  })
+
 })
