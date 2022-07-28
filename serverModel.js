@@ -1,7 +1,10 @@
 class ServerModel {
+  constructor() {
+    this.data = {}
+  }
 
   add(keyValuePair) {
-    this.data = keyValuePair;
+    Object.assign(this.data, (keyValuePair));
   }
 
   retrieve(key) {

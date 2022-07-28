@@ -18,4 +18,12 @@ describe('ServerModel',() => {
     model.add({'animal':'dog'})
     expect(model.retrieve('animal')).toEqual('dog');
   })
+
+  it('saves multiple key value pairs',() => {
+    model = new ServerModel
+    model.add({'animal':'cat'})
+    model.add({'pet':'dog'})
+    expect(model.retrieve('animal')).toEqual('cat');
+    expect(model.retrieve('pet')).toEqual('dog');
+  })
 })
