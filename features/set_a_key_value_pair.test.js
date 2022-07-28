@@ -73,11 +73,22 @@ describe('server',() => {
   })
 
   it('maintains capital letters when included',() => {
-    fetch('http://localhost:3000/set?animal=CAT')
+    fetch('http://localhost:3000/set?myanimal=CAT')
       .then(
-        fetch('http://localhost:3000/get?key=animal')
+        fetch('http://localhost:3000/get?key=myanimal')
         .then(response => response.json())
         .then(data => expect(data).toEqual('CAT'))
+        .catch((error) => { 
+          console.error(error);
+        }));
+  })
+  
+  it('allows you to assign special characters',() => {
+    fetch('http://localhost:3000/set?error=???')
+      .then(
+        fetch('http://localhost:3000/get?key=error')
+        .then(response => response.json())
+        .then(data => expect(data).toEqual('???'))
         .catch((error) => { 
           console.error(error);
         }));
