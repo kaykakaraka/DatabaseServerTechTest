@@ -14,9 +14,10 @@ To Run On Your Computer
 ---------------------
 * Clone this repo using `git clone`
 * Run `npm install` to install the dependencies
-* Use `npm run start` to start the server on http://localhost:4000/. 
-* Use `npm run start:test` followed by `jest` to run the tests. 
-* Use `npm run lint` for linting
+* Run `npm run start` to start the server on http://localhost:4000/. 
+* Run `npm run start:test` followed by `jest` to run the tests. 
+* Run `npm run lint` for linting
+* Run `jest --coverage` for coverage
 
 Note: the tests run on port 3000. This has the benefit of meaning you cannot break the tests by interacting with the server on port 4000. As currently the data is stored in memory, it would be unlikely you would break the tests: however, this makes it more possible to add a database in future, as you can run the test database with port 3000 and the real database with 4000.
 
