@@ -33,4 +33,5 @@ describe('ServerModel',() => {
     model.add({'animal':'fish'})
     expect(model.retrieve('animal')).toEqual('fish')
   })
+
 })

@@ -41,4 +41,16 @@ describe('server',() => {
             })
           ));
   });
+
+  it('assigns an empty string if no value is given to a key',() => {
+    fetch('http://localhost:3000/set?name')
+    .then(
+      fetch('http://localhost:3000/get?key=name')
+      .then(response => response.json())
+      .then(data => expect(data).toEqual(''))
+      .catch((error) => { 
+        console.error(error);
+      }));
+  })
+
 })
