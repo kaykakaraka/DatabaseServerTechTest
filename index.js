@@ -3,10 +3,7 @@ const app = express()
 const ServerModel = require('./serverModel')
 const model = new ServerModel
   
-// Handling GET / request
-
 app.use(express.json())
-
 
 app.get("/set", (req, res, next) => {
   model.add(req.query)
@@ -18,7 +15,6 @@ app.get("/get", (req, res, next) => {
   res.send(JSON.stringify(data));
 })
 
-// Server setup
 const port = process.env.PORT || 4000
 
 app.listen(port, () => {
