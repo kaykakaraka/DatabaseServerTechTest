@@ -93,6 +93,25 @@ describe('server',() => {
           console.error(error);
         }));
   })
+
+  it('can differentiate between a key with capital letters and a key without', () => {
+    fetch('http://localhost:3000/set?plant=rose&PLANT=happy')
+    .then(
+      fetch('http://localhost:3000/get?key=plant')
+      .then(response => response.json())
+      .then(data => expect(data).toEqual('rose'))
+      .catch((error) => { 
+        console.error(error);
+      })
+    .then(
+      fetch('http://localhost:3000/get?key=PLANT')
+      .then(response => response.json())
+      .then(data => expect(data).toEqual('happy'))
+      .catch((error) => { 
+        console.error(error);
+      })
+    ))
+  })
   
   it('allows you to assign special characters',() => {
     fetch('http://localhost:3000/set?error=???')
