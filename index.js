@@ -7,11 +7,6 @@ const model = new ServerModel
 
 app.use(express.json())
 
-app.get("/", (req, res, next) => {
-  model.add(req.query)
-  res.send(req.query)
-})
-
 app.get("/set", (req, res, next) => {
   model.add(req.query)
   res.send(req.query)
