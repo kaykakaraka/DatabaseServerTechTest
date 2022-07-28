@@ -5,12 +5,12 @@ const model = new ServerModel
   
 app.use(express.json())
 
-app.get("/set", (req, res, next) => {
+app.get("/set", (req, res) => {
   model.add(req.query)
   res.send(req.query)
 })
 
-app.get("/get", (req, res, next) => {
+app.get("/get", (req, res) => {
   let data = model.retrieve(req.query['key'])
   res.send(JSON.stringify(data));
 })
