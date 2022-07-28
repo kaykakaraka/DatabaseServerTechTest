@@ -7,6 +7,7 @@ const model = new ServerModel
 
 app.use(express.json())
 
+
 app.get("/set", (req, res, next) => {
   model.add(req.query)
   res.send(req.query)
@@ -18,6 +19,8 @@ app.get("/get", (req, res, next) => {
 })
 
 // Server setup
-app.listen(4000, () => {
+const port = process.env.PORT || 4000
+
+app.listen(port, () => {
     console.log("Server is Running")
 })
