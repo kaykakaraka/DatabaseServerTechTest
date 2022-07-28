@@ -21,7 +21,10 @@ Note: the tests run on port 3000. This has the benefit of meaning you cannot bre
 
 My Process
 ------------
+I began by diagraming the overall system as shown below.
 
+
+I then followed a TDD process. I started with the feature tests and then, when these failed, moved to unit tests for the model in order to implement the functionality in the model and expand that into the server as a whole. This enabled me to focus on small chunks of work at a time.
 
 Examples of Use 
 -----------------
