@@ -53,4 +53,23 @@ describe('server',() => {
       }));
   })
 
+  it('can assign multiple key value pairs simultaneously',() => {
+    fetch('http://localhost:3000/set?flower=rose&book=read')
+    .then(
+      fetch('http://localhost:3000/get?key=flower')
+      .then(response => response.json())
+      .then(data => expect(data).toEqual('rose'))
+      .catch((error) => { 
+        console.error(error);
+      })
+    .then(
+      fetch('http://localhost:3000/get?key=book')
+      .then(response => response.json())
+      .then(data => expect(data).toEqual('read'))
+      .catch((error) => { 
+        console.error(error);
+      })
+    ))
+  })
+
 })
